@@ -70,20 +70,39 @@ void loop() {
   distance3 = (duration3 / 2) / 28.5 ;// calculate distance in CM
   //Serial.println(distance3);
 
-  if ( distance1==0 && distance3==0) {
+  if ( distance1==0 && distance3==0 && distance2 >=4) {
 
-    digitalWrite(motorPin1, HIGH);
+    digitalWrite(motorPin1 , HIGH); //FORWARD
     digitalWrite(motorPin2 , LOW);
+    digitalWrite(motorPin3 , HIGH);
+    digitalWrite(motorPin4 , LOW);
     delay(1000);
   }
-  else {
-    Serial.print(distance);
-    digitalWrite(motorPin1, HIGH);
-    digitalWrite(motorPin2 , LOW);
-    digitalWrite(led1 , LOW);
-    digitalWrite(led2 , HIGH);
-    Serial.println("cm   MOTOR START");
+  
+  if ( distance1==0 && distance3==0 && distance2 ==0) {
+
+    digitalWrite(motorPin1 , LOW); //BACKWARD
+    digitalWrite(motorPin2 , HIGH);
+    digitalWrite(motorPin3 , LOW);
+    digitalWrite(motorPin4 , HIGH);
     delay(1000);
   }
+
+  if ( distance1==0 && distance3 >=4 && distance2 >=4) {
+
+    digitalWrite(motorPin1 , HIGH); //RIGHT
+    digitalWrite(motorPin2 , LOW);
+    digitalWrite(motorPin3 , LOW);
+    digitalWrite(motorPin4 , LOW);
+    delay(1000);
+  }
+
+  if ( distance1 >=4 && distance3 ==0 && distance2 >=4) {
+
+    digitalWrite(motorPin1 , LOW); //LEFT
+    digitalWrite(motorPin2 , LOW);
+    digitalWrite(motorPin3 , HIGH);
+    digitalWrite(motorPin4 , LOW);
+    delay(1000);
 }
 }
