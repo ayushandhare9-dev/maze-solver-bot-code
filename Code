@@ -76,7 +76,7 @@ void loop() {
     digitalWrite(motorPin2 , LOW);
     digitalWrite(motorPin3 , HIGH);
     digitalWrite(motorPin4 , LOW);
-    delay(1000);
+    delay(2000);
   }
   
   if ( distance1==0 && distance3==0 && distance2 ==0) {
@@ -85,7 +85,7 @@ void loop() {
     digitalWrite(motorPin2 , HIGH);
     digitalWrite(motorPin3 , LOW);
     digitalWrite(motorPin4 , HIGH);
-    delay(1000);
+    delay(2000);
   }
 
   if ( distance1==0 && distance3 >=4 && distance2 >=4) {
@@ -94,7 +94,7 @@ void loop() {
     digitalWrite(motorPin2 , LOW);
     digitalWrite(motorPin3 , LOW);
     digitalWrite(motorPin4 , LOW);
-    delay(1000);
+    delay(2000);
   }
 
   if ( distance1 >=4 && distance3 ==0 && distance2 >=4) {
@@ -103,6 +103,6 @@ void loop() {
     digitalWrite(motorPin2 , LOW);
     digitalWrite(motorPin3 , HIGH);
     digitalWrite(motorPin4 , LOW);
-    delay(1000);
+    delay(2000);
 }
 }
